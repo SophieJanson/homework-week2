@@ -1,15 +1,11 @@
+//Non-recursive solution
+// function pathFind(path, object) {
+//   return path.reduce((finalObject, currentPathSection) => finalObject[currentPathSection], object)
+// }
+
+//Recursive solution
 function pathFind(path, object) {
-  return path.reduce((finalObject, currentPathSection) => finalObject[currentPathSection], object)
+  return path.length ? pathFind(path.slice(1), object[path[0]]) : object;
 }
-
-
-let obj = {
-  book: {
-    author: {
-      name: "Yuval"
-    }
-  }
-}
-console.log(pathFind(["book", "author", "name"], obj) )
 
 module.exports.pathFind = pathFind
