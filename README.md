@@ -1,4 +1,8 @@
-# Homework Assignment
+# Things I would like feedback on
+1. ShoppingCart.js -> Assignment 1.5: Cloning seems to work, but this way of doing it somehow feels a bit hacky. Googling this, I also found Object.assign. Which method is better and why?
+2. pathFind.js -> Assignment 2.4: I found a solution that uses recursion as well as one that doesn't. What is the advantage of using recursion here? Both solutions seem equally readable to me and there are no major differences in performance.
+
+# Assignments
 
 This assignment covers the first week of the Intermediate Bootcamp. This repository contains 3 test files, each covering a single task. The order of the tasks does not matter. You can complete them in any order. Try to complete as many of them as you can.
 
