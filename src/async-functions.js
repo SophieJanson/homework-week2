@@ -1,10 +1,14 @@
-function giveItBackLater(value, callback) {
-  setTimeout(callback.bind(null, value), 1000)
-}
+// First solution
+// function giveItBackLater(value, callback) {
+//   setTimeout(callback.bind(null, value), 1000)
+// }
 
-giveItBackLater("pink", function(val) {
-  console.log(val, "elephant");
-})
+//Second solution after reading up on Array.bind()
+function giveItBackLater(value, callback) {
+  setTimeout(function() {
+    callback(value)
+  }, 1000)
+}
 
 function addSomePromises(somePromise) {
   return somePromise
@@ -12,17 +16,11 @@ function addSomePromises(somePromise) {
     .catch(error => error.repeat(3))
 }
 
-// Note: The instructions said to reuse the function used within giveItBackLater.
-// I didn't define a new function in giveItBackLater, since it didn't seem the best solution.
 function promiseToGiveItBackLater(value) {
   return new Promise((resolve, reject) => {
     return !value ? reject("The value is missing") : resolve(value)
   })
 }
-
-promiseToGiveItBackLater("elephant")
-  .then(val => console.log(val + " is pink."))
-  .catch(err => console.log(err))
 
 module.exports = {
   giveItBackLater,

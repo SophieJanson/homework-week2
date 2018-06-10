@@ -5,7 +5,7 @@
 
 //Recursive solution
 function pathFind(path, object) {
-  return path.length ? pathFind(path.slice(1), object[path[0]]) : object;
+  return path.length ? pathFind(path.slice(1), object[path[0]]) : object
 }
 
 module.exports.pathFind = pathFind

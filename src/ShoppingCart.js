@@ -8,12 +8,11 @@ module.exports = class ShoppingCart {
   }
 
   addItem(itemName, quantity, price) {
-    this.items.push(
-      {
-        name: itemName,
-        quantity: quantity,
-        pricePerUnit: price
-      })
+    this.items.push({
+      name: itemName,
+      quantity: quantity,
+      pricePerUnit: price
+    })
   }
 
   clear() {
@@ -23,7 +22,6 @@ module.exports = class ShoppingCart {
   clone() {
     let newCart = new ShoppingCart()
     newCart.items = this.items.map(item => ({...item}))
-
     return newCart
   }
 }
